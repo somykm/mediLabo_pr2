@@ -55,7 +55,6 @@ public class PatientService {
         return false;
     }
 
-
     public boolean deletePatient(Integer id) {
         Optional<Patient> patients = patientRepository.findById(id);
 

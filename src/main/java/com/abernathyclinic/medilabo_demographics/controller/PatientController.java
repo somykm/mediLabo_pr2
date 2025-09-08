@@ -39,12 +39,12 @@ public class PatientController {
     }
 
 
-    @GetMapping("/{id}")//working
+    @GetMapping("/{id}")
     public Patient getById(@PathVariable Integer id) {
         return patientService.getById(id);
     }
 
-    @PutMapping("/{id}")//working
+    @PutMapping("/{id}")
     public boolean updatePatient(@PathVariable Integer id,
                                  @RequestBody Patient updatePatient) {
         log.info("PUT request received to update patient with ID: {}", id);
