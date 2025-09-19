@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Slf4j
+@CrossOrigin(origins = "http://localhost:8082")
 @RestController
 @RequestMapping("/api/patient")
 public class PatientController {
@@ -24,8 +25,6 @@ public class PatientController {
     @GetMapping("/all")
     public List<Patient> getAllPatients() {
         log.info("Http Get request received at/ patient URL");
-        //List<Patient> patients = patientService.getAllPatients();
-        //model.addAttribute("patients", patients);
         return patientService.getAllPatients();
     }
 
@@ -37,7 +36,6 @@ public class PatientController {
         return ResponseEntity.ok("Patient added successfully.");
 
     }
-
 
     @GetMapping("/{id}")
     public Patient getById(@PathVariable Integer id) {
